@@ -1,0 +1,26 @@
+# Neural Style
+This is a torch implementation of the paper A Neural Algorithm of Artistic
+Style by Leon A. Gatys, Alexander S. Ecker, and Matthias Bethge.
+
+The paper presents an algorithm for combining the content of one image with
+the style of another image using convolutional neural networks. Here's an
+example that maps the artistic style of The Starry Night onto a night-time
+photograph of the Stanford campus
+
+> Implementation:
+https://github.com/jcjohnson/neural-style
+> Video implementation instruction:
+https://gist.github.com/genekogan/d61c8010d470e1dbe15d
+> General info:
+https://gitxiv.com/posts/jG46ukGod8R7Rdtud/a-neural-algorithm-of-artistic-style
+> Related paper
+http://arxiv.org/abs/1508.06576
+
+# Neural Doodle
+Draw a picture and then transform it by adding textures.
+
+> Basic Implementation
+https://github.com/alexjc/neural-doodle
+> Faster ?? Implementation
+https://github.com/DmitryUlyanov/fast-neural-doodle
+
