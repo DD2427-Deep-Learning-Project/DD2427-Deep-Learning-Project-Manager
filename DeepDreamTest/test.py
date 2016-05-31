@@ -10,14 +10,14 @@ def showAvailableLayers():
     Read the function title
     The net is the one load in the kernel module
     """
-    kernel.net.blobs.keys()
+    return kernel.net.blobs.keys()
 
 def dream(img_path, end='inception_3b/5x5_reduce'):
     """
     Simple dream on a image
     """
     img = np.float32(PIL.Image.open(img_path))
-    showarray(img)
+    kernel.showarray(img)
     _=kernel.deepdream(kernel.net, img, end=end)
 
 def recursive_dream(img_path, end='inception_4c/output', rec=10):
@@ -35,7 +35,7 @@ def recursive_dream(img_path, end='inception_4c/output', rec=10):
     h, w = frame.shape[:2]
     s = 0.05 # scale coefficient
     for i in xrange(rec):
-        frame = deepdream(kernel.net, frame, end=end)
+        frame = kernel.deepdream(kernel.net, frame, end=end)
         PIL.Image.fromarray(np.uint8(frame)).save("frames/%04d.jpg"%frame_i)
         frame = nd.affine_transform(frame, [1-s,1-s,1], [h*s/2,w*s/2,0], order=1)
         frame_i += 1
@@ -46,7 +46,7 @@ def guide_dream(img_path, guide_path, end='inception_3b/output'):
     """
     img = np.float32(PIL.Image.open(img_path))
     dst, guide_features = setGuide(guide_path, end=end)
-    _=kernel.deepdream(kernel.net, img, end=end, objective=objective_guide)
+    _=kernel.deepdream(kernel.net, img, end=end, objective=kernel.objective_guide)
 
 def setGuide(img_path, end = 'inception_3b/output'):
     """

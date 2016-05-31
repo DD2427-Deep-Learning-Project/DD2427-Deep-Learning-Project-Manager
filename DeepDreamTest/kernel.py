@@ -94,7 +94,7 @@ def deepdream(net, base_img, iter_n=10, octave_n=4, octave_scale=1.4,
 
 def objective_guide(dst):
     x = dst.data[0].copy()
-    y = guide_features
+    y = dst.data[0].copy()
     ch = x.shape[0]
     x = x.reshape(ch,-1)
     y = y.reshape(ch,-1)
