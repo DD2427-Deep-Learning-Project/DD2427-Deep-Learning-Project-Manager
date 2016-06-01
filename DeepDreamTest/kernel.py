@@ -7,11 +7,9 @@ import PIL.Image
 from IPython.display import clear_output, Image, display
 from google.protobuf import text_format
 
-caffe_path = '/home/eric/Workspace/caffe'
-sys.path.append(caffe_path + '/python')
 import caffe
 
-model_path = caffe_path + '/models/bvlc_googlenet/' # substitute your path here
+model_path = '../bvlc_googlenet/' # substitute your path here
 net_fn   = model_path + 'deploy.prototxt'
 param_fn = model_path + 'bvlc_googlenet.caffemodel'
 
