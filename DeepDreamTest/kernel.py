@@ -9,7 +9,7 @@ from google.protobuf import text_format
 
 import caffe
 
-model_path = '../bvlc_googlenet/' # substitute your path here
+model_path = 'bvlc_googlenet/' # substitute your path here
 net_fn   = model_path + 'deploy.prototxt'
 param_fn = model_path + 'bvlc_googlenet.caffemodel'
 
